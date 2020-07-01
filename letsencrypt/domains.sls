@@ -35,7 +35,7 @@
     - require:
       - file: {{ check_cert_cmd }}
 
-{% for setname, domainlist in letsencrypt.domainsets.items() %}
+{% for setname, domainlist in letsencrypt.get('domainsets', {}).items() %}
 
 # domainlist[0] represents the "CommonName", and the rest
 # represent SubjectAlternativeNames
